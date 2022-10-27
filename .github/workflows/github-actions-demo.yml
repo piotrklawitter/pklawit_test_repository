@@ -1,18 +1,12 @@
-name: GitHub Actions Demo
-on: 
-  push:
-    branches:
-      - main
-  pull:
-    branches:
-      - main
-      
-  schedule:
-  # * is a special character in YAML so you have to quote this string
-  - cron:  '30 5,17 * * *'
-  
+name: pklawit demo
+on:
   workflow_dispatch:
-    
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: environment
+        required: true 
+  
   
 jobs:
   print:
